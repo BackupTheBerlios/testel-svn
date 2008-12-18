@@ -1,0 +1,76 @@
+<!--
+	testeldescription.dtd
+	TestEl-DTD fuer Tagging
+-->
+<!-- Namespace-Zeug -->
+<!ENTITY % ns	'xmlns:testel CDATA #FIXED "http://www.beimax.de/testel"'>
+<!-- Klassenattribut -->
+<!ENTITY % class
+	"class	CDATA	#REQUIRED"
+>
+<!-- Positionsattribute fuer externe Beschreibung -->
+<!ENTITY % pos
+	"bpos	CDATA	#IMPLIED
+	brow	CDATA	#IMPLIED
+	bcol	CDATA	#IMPLIED
+	epos	CDATA	#IMPLIED
+	erow	CDATA	#IMPLIED
+	ecol	CDATA	#IMPLIED"
+>
+<!-- Attribute fuer das Training (nur testel:tags) -->
+<!ENTITY % trainattr
+	'unlearn		(yes|no)	"no"
+	outer		(yes|no)	"no"
+	start		CDATA		#IMPLIED
+	stop		CDATA		#IMPLIED
+	exclstart	(yes|no)	"no"
+	exclstop	(yes|no)	"no"
+	greedy		(yes|no)	"no"
+	nonesting	(yes|no)	"no"'
+>
+<!--
+	Wurzelelement fuer externe Beschreibungsdateien
+-->
+<!ELEMENT testel:externaldesc (testel:ref|testel:tag)+ >
+<!ATTLIST testel:externaldesc
+	%nds;
+	origURL	CDATA	#REQUIRED
+	saveURL CDATA	#REQUIRED
+>
+<!--
+	Pseudo-Wurzelelement fuers Inline-Tagging und Training
+	(wird beim Inline-Tagging nicht ins Dokument integriert)
+-->
+<!ELEMENT testel:description (#PCDATA|testel:ref|testel:tag)*>
+<!ATTLIST testel:description %nds; >
+<!ELEMENT testel:train (#PCDATA|testel:ref|testel:tag)*>
+<!ATTLIST testel:train %nds; >
+<!--
+	Referenzen werden in TestEl mit ref gekennzeichnet
+-->
+<!ELEMENT testel:ref (#PCDATA)>
+<!ATTLIST testel:ref %class; %pos; >
+<!--
+	allgemeine Text-strukturierende Elemente werden
+	in TestEl mit tag gekennzeichnet
+-->
+<!ELEMENT testel:tag (#PCDATA|testel:ref)*>
+<!ATTLIST testel:tag %class; %pos; >
+<!--
+	spezielle Trainingstags
+-->
+<!-- Match-Attribut -->
+<!ELEMENT testel:match (#PCDATA|testel:ref)*>
+<!ATTLIST testel:match %class; %trainattr; >
+<!-- Bedeutungstragende Phrase -->
+<!ELEMENT testel:word (#PCDATA|testel:abbrev)*>
+<!ATTLIST testel:word %class; >
+<!-- Abkuerzung -->
+<!ELEMENT testel:abbrev (#PCDATA)*>
+<!-- Satzzeichen -->
+<!ELEMENT testel:punct (#PCDATA)*>
+<!ATTLIST testel:punct %class; >
+<!-- Nummer -->
+<!ELEMENT testel:number (#PCDATA)*>
+<!ATTLIST testel:number %class; >
+

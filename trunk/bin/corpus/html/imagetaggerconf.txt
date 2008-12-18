@@ -1,0 +1,26 @@
+#ImageTagger-Config
+#Die folgenden Abschnitte können erweitert werden, jedoch nicht in ihrer Reihenfolge
+#vertauscht werden, etc.
+#nameParts: links stehen Namensbestandteile, die im Dateinamen vorkommen dürfen, rechts der in
+#diesem Fall zugewiesene Typ
+[nameParts]
+banner=BANNER
+werbung=BANNER
+icon=ICON
+thumb=THUMBNAIL
+button=BUTTON
+knopf=BUTTON
+#Wenn Breite und Höhe einer Grafik kleiner oder gleich diesem Wert ist, dann ist
+#es automatisch ein ICON-Wert
+[ICONSIZE]
+20
+#weitere quadratische Icon-Größen
+[iconSizes]
+24,32,40,48,64
+#feste Größen z.B. bei Bannern (Breite x Höhe = TYP)
+[picSizes]
+468x60=BANNER
+392x72=BANNER
+120x240=BANNER
+234x60=BANNER
+160x600=BANNER

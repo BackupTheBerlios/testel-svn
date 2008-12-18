@@ -1,0 +1,37 @@
+#Mapping von Fonts auf einfachere Familien
+#Serifenloste Schriften
+sans-serif=sans-serif
+sansserif=sans-serif
+sans=sans-serif
+Helvetica=sans-serif
+Arial=sans-serif
+Verdana=sans-serif
+Dialog=sans-serif
+Andale Mono=sans-serif
+Impact=sans-serif
+Trebuchet=sans-serif
+Trebuchet MS=sans-serif
+Calibri=sans-serif
+Candara=sans-serif
+Corbel=sans-serif
+#Serifenschriften
+serif=serif
+Times=serif
+Times New Roman=serif
+Georgia=serif
+Cambria=serif
+Constantia=serif
+Garamond=serif
+#Monospace-Schriften
+monospace=monospace
+Courier=monospace
+Courier New=monospace
+Consolas=monospace
+Monospaced=monospace
+#Casual Fonts
+casual=casual
+Comic Sans=casual
+Comic Sans MS=casual
+#Symbole
+Symbol=symbol
+Webdings=symbol
